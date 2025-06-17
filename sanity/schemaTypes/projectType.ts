@@ -21,6 +21,10 @@ export const projectType = defineType({
             validation: (rule) => rule.required(),
         }),
         defineField({
+            name: "github",
+            type: "url",
+        }),
+        defineField({
             name:"images",
             title:"Images",
             type:"array", 

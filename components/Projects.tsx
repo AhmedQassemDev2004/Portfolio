@@ -23,6 +23,7 @@ export default function Projects() {
           title,
           description,
           link,
+          github,
           category,
           "image": images[0].asset->url,
           "images": images[].asset->url,
@@ -144,6 +145,7 @@ export default function Projects() {
                     title={project.title}
                     description={project.description}
                     link={project.link}
+                    github={project.github}
                     image={project.image}
                     category={project.category}
                     images={project.images}
@@ -179,6 +181,7 @@ type Project = {
   title: string;
   description: string;
   link: string;
+  github: string;
   image: string;
   category: string;
   images: string[];

@@ -10,16 +10,13 @@ import {
   IconLink,
   IconCode,
 } from "@tabler/icons-react";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 import Navbar from "@/components/Navbar";
 
 // Lazy load components that aren't immediately visible
 const About = lazy(() => import("@/components/About"));
 const Skills = lazy(() => import("@/components/ClientSkills"));
 const Projects = lazy(() => import("@/components/Projects"));
-const Blog = lazy(() => import("@/components/Blog"));
 const Contact = lazy(() => import("@/components/Contact"));
-const Footer = lazy(() => import("@/components/Footer"));
 
 const items = [
   { name: "About", link: "/#about", icon: <IconUser className="h-4 w-4" /> },
@@ -53,12 +50,13 @@ export default function Home() {
         </Suspense>
 
         <Suspense fallback={<div className="h-screen"></div>}>
+          <Projects />
+        </Suspense>
+        
+        <Suspense fallback={<div className="h-screen"></div>}>
           <Skills />
         </Suspense>
 
-        <Suspense fallback={<div className="h-screen"></div>}>
-          <Projects />
-        </Suspense>
 
         {/* <Suspense fallback={<div className="h-screen"></div>}>
           <Blog />
@@ -66,10 +64,6 @@ export default function Home() {
 
         <Suspense fallback={<div className="h-screen"></div>}>
           <Contact />
-        </Suspense>
-
-        <Suspense fallback={<div className="h-screen"></div>}>
-          <Footer />
         </Suspense>
       </div>
     </div>

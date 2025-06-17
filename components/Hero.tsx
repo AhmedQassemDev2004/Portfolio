@@ -84,7 +84,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-xl sm:text-2xl text-neutral-400 font-light"
               >
-                Creative Developer
+                Full Stack Developer
               </motion.h2>
             </div>
 
@@ -127,10 +127,20 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="flex gap-6 pt-8"
             >
+               <motion.a
+                  href={"mailto:ahmedqasem043@gmail.com"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.7 }}
+                  className="text-neutral-500 hover:text-white transition-colors duration-200 text-sm font-mono"
+                >
+                  ahmedqasem043@gmail.com
+                </motion.a>
               {[
-                { href: "https://github.com/yourusername", label: "GitHub" },
-                { href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-                { href: "https://twitter.com/yourusername", label: "Twitter" },
+                { href: "https://github.com/AhmedQassemDev2004", label: "GitHub" },
+                { href: "https://linkedin.com/in/ahmedmqassem", label: "LinkedIn" },
               ].map((social, index) => (
                 <motion.a
                   key={social.label}

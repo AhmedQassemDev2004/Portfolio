@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import {
   FaGithub,
@@ -16,66 +16,12 @@ import {
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: 'success' | 'error' | null;
-    message: string;
-  }>({ type: null, message: '' });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: '' });
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to send message');
-      }
-
-      setSubmitStatus({
-        type: 'success',
-        message: 'Message sent successfully! I will get back to you soon.',
-      });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error: unknown) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus({
-        type: 'error',
-        message: error instanceof Error ? error.message : 'Failed to send message. Please try again.',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
 
   return (
     <section
       id="contact"
       ref={ref}
-      className="relative min-h-screen w-full bg-neutral-950 py-24"
+      className="relative w-full bg-neutral-950 py-24"
     >
       {/* Subtle background */}
       <div className="absolute inset-0">
@@ -96,126 +42,17 @@ export default function Contact() {
               Contact
             </div>
             <h2 className="text-3xl sm:text-4xl font-light text-white leading-tight">
-              Let&apos;s work together
+              Let&apos;s connect
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* Contact form */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:col-span-8 space-y-6"
-            >
-              <motion.form
-                onSubmit={handleSubmit}
-                className="space-y-6"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="mb-2 block font-mono text-sm text-white/70"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full border border-white/10 bg-white/5 px-4 py-3 font-mono text-sm text-white backdrop-blur-sm transition-colors focus:border-white/20 focus:outline-none"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="mb-2 block font-mono text-sm text-white/70"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full border border-white/10 bg-white/5 px-4 py-3 font-mono text-sm text-white backdrop-blur-sm transition-colors focus:border-white/20 focus:outline-none"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className="mb-2 block font-mono text-sm text-white/70"
-                  >
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full border border-white/10 bg-white/5 px-4 py-3 font-mono text-sm text-white backdrop-blur-sm transition-colors focus:border-white/20 focus:outline-none"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="mb-2 block font-mono text-sm text-white/70"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={4}
-                    className="w-full border border-white/10 bg-white/5 px-4 py-3 font-mono text-sm text-white backdrop-blur-sm transition-colors focus:border-white/20 focus:outline-none"
-                  />
-                </div>
-
-                {submitStatus.type && (
-                  <div
-                    className={`p-4 text-sm ${
-                      submitStatus.type === 'success'
-                        ? 'bg-green-500/5 text-green-400'
-                        : 'bg-red-500/5 text-red-400'
-                    }`}
-                  >
-                    {submitStatus.message}
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-white/5 border border-white/10 px-6 py-3 font-mono text-sm text-white backdrop-blur-sm transition-all hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </button>
-              </motion.form>
-            </motion.div>
-
             {/* Contact info */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="lg:col-span-4 space-y-8"
+              className="lg:col-span-6 space-y-8"
             >
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
