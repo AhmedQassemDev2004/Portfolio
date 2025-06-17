@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modern Portfolio Website
+
+A sleek, modern portfolio website built with Next.js 14, TypeScript, Tailwind CSS, and Sanity CMS. This portfolio showcases your work with a beautiful, responsive design and smooth animations.
+
+![Portfolio Preview](public/preview.png)
+
+## Features
+
+- 🎨 Modern and clean design
+- 📱 Fully responsive layout
+- ⚡ Built with Next.js 14 and TypeScript
+- 🎭 Smooth animations with Framer Motion
+- 🎯 SEO optimized
+- 📝 Content managed through Sanity CMS
+- 🎨 Styled with Tailwind CSS
+- 🔍 Image optimization with Next.js Image
+- 🌙 Dark mode by default
+- 📱 Mobile-first approach
+
+## Tech Stack
+
+- **Framework:** [Next.js 14](https://nextjs.org/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **CMS:** [Sanity](https://www.sanity.io/)
+- **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+- **Deployment:** [Vercel](https://vercel.com/)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.17 or later
+- npm or yarn
+- Sanity account
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/portfolio.git
+cd portfolio
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Set up environment variables:
+Create a `.env.local` file in the root directory and add your Sanity credentials:
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+```
+
+4. Start the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Sanity Studio Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Start the Sanity Studio:
+```bash
+npm run sanity dev
+# or
+yarn sanity dev
+```
 
-## Learn More
+2. Open [http://localhost:3333](http://localhost:3333) to access the Sanity Studio.
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+├── app/                 # Next.js app directory
+├── components/         # React components
+├── lib/               # Utility functions and types
+├── public/            # Static assets
+├── sanity/            # Sanity configuration and schemas
+└── styles/            # Global styles
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Customization
 
-## Deploy on Vercel
+### Content Management
+All content is managed through Sanity CMS. You can modify:
+- About section
+- Projects
+- Skills
+- Contact information
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Styling
+The project uses Tailwind CSS for styling. You can customize:
+- Colors in `tailwind.config.js`
+- Typography
+- Layout components
+- Animations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+The easiest way to deploy your portfolio is using Vercel:
+
+1. Push your code to GitHub
+2. Import your repository to Vercel
+3. Add your environment variables
+4. Deploy!
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+Ahmed Qassem - [@qassem041](https://instagram.com/qassem041) - ahmedqasem043@gmail.com
+
+Project Link: [https://github.com/AhmedQassemDev2004/portfolio](https://github.com/AhmedQassemDev2004/portfolio)
