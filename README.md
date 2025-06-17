@@ -1,16 +1,13 @@
-# Modern Portfolio Website
+# Modern Portfolio
 
-A sleek, modern portfolio website built with Next.js 14, TypeScript, Tailwind CSS, and Sanity CMS. This portfolio showcases your work with a beautiful, responsive design and smooth animations.
-
-![Portfolio Preview](public/preview.png)
+A sleek, modern portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and Sanity CMS.
 
 ## Features
 
 - 🎨 Modern and clean design
 - 📱 Fully responsive layout
-- ⚡ Built with Next.js 14 and TypeScript
+- ⚡ Built with Next.js 15 and TypeScript
 - 🎭 Smooth animations with Framer Motion
-- 🎯 SEO optimized
 - 📝 Content managed through Sanity CMS
 - 🎨 Styled with Tailwind CSS
 - 🔍 Image optimization with Next.js Image
@@ -19,7 +16,7 @@ A sleek, modern portfolio website built with Next.js 14, TypeScript, Tailwind CS
 
 ## Tech Stack
 
-- **Framework:** [Next.js 14](https://nextjs.org/)
+- **Framework:** [Next.js 15](https://nextjs.org/)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Animations:** [Framer Motion](https://www.framer.com/motion/)
@@ -39,7 +36,7 @@ A sleek, modern portfolio website built with Next.js 14, TypeScript, Tailwind CS
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/AhmedQassemDev2004/Portfolio
 cd portfolio
 ```
 
