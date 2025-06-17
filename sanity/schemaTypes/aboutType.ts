@@ -17,7 +17,7 @@ export const aboutType = defineType({
             description: "Add paragraphs for your about section",
             validation: (rule) => rule.required().min(1),
         }),
-    ],
+    ],  
     preview: {
         select: {
             title: "title",

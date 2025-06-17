@@ -7,10 +7,8 @@ import Link from "next/link";
 import {
   FaGithub,
   FaLinkedin,
-  FaTwitter,
   FaEnvelope,
   FaInstagram,
-  FaDiscord,
 } from "react-icons/fa";
 
 export default function Contact() {

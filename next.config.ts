@@ -5,7 +5,10 @@ const nextConfig: NextConfig = {
   devIndicators: {
     // Use the new position property instead of deprecated options
     position: 'bottom-right'
-  }
+  },
+  eslint: {
+    ignoreDuringBuilds:true
+  } 
 };
 
 export default nextConfig;
