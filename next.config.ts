@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Remove experimental PPR which requires canary version
+  devIndicators: {
+    // Use the new position property instead of deprecated options
+    position: 'bottom-right'
+  }
 };
 
 export default nextConfig;
